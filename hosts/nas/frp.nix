@@ -1,12 +1,13 @@
+{ secrets, ... }:
 {
   services.frp = {
     enable = true;
     role = "client";
     settings = {
-      serverAddr = "10.10.10.10";
-      serverPort = 123;
+      serverAddr = "${secrets.frp.server}";
+      serverPort = secrets.frp.port;
       auth.method = "token";
-      auth.token = "nozoeli1314"; 
+      auth.token = "${secrets.frp.token}"; 
       proxies = [
         {
           name = "ssh";
