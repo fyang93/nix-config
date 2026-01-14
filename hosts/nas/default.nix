@@ -10,7 +10,7 @@
     ./hardware-configuration.nix
     ./nii-auth.nix
     ./easytier.nix
-    ./frp.nix
+    #./frp.nix
   ];
 
   # Bootloader.

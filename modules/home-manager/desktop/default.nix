@@ -2,11 +2,9 @@
 {
   imports = [
     # ../custom
-    # ./niri
     ./terminal
     ./fcitx5
     ./xdg.nix
-    # ./zed.nix
     ./vscode.nix
     ./obs.nix
     ./mpv.nix
@@ -15,7 +13,7 @@
 
   home.packages = with pkgs; [
     # browser
-    firefox
+    google-chrome
 
     # im
     telegram-desktop

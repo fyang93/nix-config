@@ -27,8 +27,4 @@
       light = "Papirus-Light";
     };
   };
-
-  home.sessionVariables = {
-    QT_QPA_PLATFORMTHEME = "gtk3";
-  };
 }
