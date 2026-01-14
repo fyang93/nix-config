@@ -20,6 +20,9 @@
       emoji.name = "Noto Color Emoji";
       emoji.package = pkgs.noto-fonts-color-emoji;
     };
+    fonts.sizes = {
+      terminal = 12;
+    };
     iconTheme = {
       enable = true;
       package = pkgs.papirus-icon-theme;
