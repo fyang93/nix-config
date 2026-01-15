@@ -18,7 +18,7 @@ manage homeconf=HOMECONF:
     #!/usr/bin/env bash
     set -euo pipefail
     [[ -d .git ]] && git add .
-    home-manager switch --flake ".#{{homeconf}}"
+    home-manager switch --flake ".#{{homeconf}}" -L
 
 update message="update":
     #!/usr/bin/env bash

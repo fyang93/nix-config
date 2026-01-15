@@ -21,8 +21,10 @@
     wechat
 
     # work
+    wpsoffice-cn
     wemeet
     feishu
+    (callPackage ./lark.nix { })
 
     # rdp
     remmina

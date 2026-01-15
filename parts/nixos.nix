@@ -17,11 +17,9 @@
       system = "x86_64-linux";
       specialArgs = {
         username = "yang";
-	inherit secrets;
+	      inherit secrets;
       };
       modules = [
-        inputs.dankMaterialShell.nixosModules.dankMaterialShell
-        inputs.dankMaterialShell.nixosModules.greeter
         ../hosts/nas
         ../modules/nixos/common/networkmanager
         ../modules/nixos/minimal
@@ -37,13 +35,10 @@
         username = "yang";
       };
       modules = [
-        inputs.dankMaterialShell.nixosModules.dankMaterialShell
-        inputs.dankMaterialShell.nixosModules.greeter
         ../hosts/gamer
         ../modules/nixos/common/nvidia.nix
         ../modules/nixos/common/bluetooth.nix
-        ../modules/nixos/common/networkd
-        ../modules/nixos/common/networkd/wifi.nix
+        ../modules/nixos/common/networkmanager
         ../modules/nixos/minimal
         ../modules/nixos/desktop
         ../modules/nixos/desktop/gaming.nix

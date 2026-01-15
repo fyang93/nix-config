@@ -8,7 +8,7 @@
         # font = "monospace:size=12";
         # dpi-aware = "yes";
         pad = "20x15 center-when-maximized-and-fullscreen";
-        #initial-window-size-chars="100x25";
+        initial-window-size-chars="100x25";
       };
 
       mouse = {
