@@ -21,8 +21,7 @@
         set -g fish_color_quote = yellow --italics
         # only print pokemons on interactive shells
         if status --is-interactive
-          set -gx LANG en_US.UTF-8
-          set -gx LC_ALL en_US.UTF-8
+          set -gx LANGUAGE en
           krabby random 1-3 | tail -n +2
         end
       '';
