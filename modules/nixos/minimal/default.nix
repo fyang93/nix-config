@@ -5,6 +5,7 @@
     ./nix-ld.nix
     ./direnv.nix
     ./ssh.nix
+    ./doas.nix
   ];
 
   environment.systemPackages = with pkgs; [
