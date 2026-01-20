@@ -6,7 +6,7 @@
       extensions = with pkgs.vscode-extensions; [
         vscodevim.vim
         mkhl.direnv
-        donjayamanne.githistory
+        eamodio.gitlens
         christian-kohler.path-intellisense
         ms-vscode-remote.remote-ssh
         # ms-vscode-remote.remote-ssh-edit

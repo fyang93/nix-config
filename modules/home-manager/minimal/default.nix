@@ -5,17 +5,16 @@
     ./zellij
     ./git.nix
     ./archive.nix
+    ./dev.nix
   ];
 
   nixpkgs.config.allowUnfree = true;
 
   home.packages = with pkgs; [
+    fastfetchMinimal
+    dig # DNS lookup
     fd
     ripgrep
-    just
-    uv
-    dig # DNS lookup
-    fastfetchMinimal
   ];
 
   home.username = username;
