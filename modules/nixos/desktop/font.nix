@@ -19,7 +19,6 @@
 
       # extra
       noto-fonts
-      noto-fonts-cjk-sans
 
       # 添加自定义字体
       (stdenvNoCC.mkDerivation {
@@ -28,7 +27,7 @@
 
         installPhase = ''
           mkdir -p $out/share/fonts/truetype
-          cp -r $src/*.{ttf,otf,TTF,OTF} $out/share/fonts/truetype/ 2>/dev/null || true
+          find $src -type f \( -iname "*.ttf" -o -iname "*.otf" \) -exec cp {} $out/share/fonts/truetype/ \;
         '';
       })
     ];
@@ -41,6 +40,7 @@
           "TsangerJinKai03"
         ];
         sansSerif = [
+          "HarmonyOS Sans"
           "LXGW Neo XiHei"
         ];
         monospace = [

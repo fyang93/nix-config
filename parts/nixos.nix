@@ -39,10 +39,10 @@
         ../modules/nixos/common/nvidia.nix
         ../modules/nixos/common/bluetooth.nix
         ../modules/nixos/common/networkmanager
+        ../modules/nixos/common/virtualisation
         ../modules/nixos/minimal
         ../modules/nixos/desktop
         ../modules/nixos/desktop/gaming.nix
-        ../modules/nixos/desktop/autologin.nix
         ../modules/nixos/users/yang.nix
       ];
     };

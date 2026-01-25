@@ -13,12 +13,14 @@
       shellAliases = {
         "ls" = "eza";
         "l" = "eza -lah --icons=auto";
-        "opencode" = "bun $(which opencode)";
+        "npm" = "pnpm";
       };
       shellInit = ''
         zoxide init fish | source
         export EDITOR=vim
-        export PATH="$HOME/.local/bin:$HOME/.bun/bin:$PATH"
+        set -gx PNPM_HOME "$HOME/.local/share/pnpm"
+        fish_add_path $PNPM_HOME
+        fish_add_path "$HOME/.local/bin"
         set -g fish_color_command = blue --italics
         set -g fish_color_quote = yellow --italics
         # only print pokemons on interactive shells

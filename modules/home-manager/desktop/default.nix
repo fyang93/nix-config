@@ -26,9 +26,6 @@
     feishu
     (callPackage ./lark.nix { })
 
-    # rdp
-    remmina
-
     # cloud storage
     # onedrivegui
   ];

@@ -17,5 +17,7 @@
 
   programs.gamemode.enable = true;
 
-  environment.systemPackages = with pkgs; [ mangohud ];
+  # Duckov: 9050
+  networking.firewall.allowedTCPPorts = [ 9050 ];
+  networking.firewall.allowedUDPPorts = [ 9050 ];
 }
