@@ -33,6 +33,7 @@
       system = "x86_64-linux";
       specialArgs = {
         username = "yang";
+        inherit secrets;
       };
       modules = [
         ../hosts/gamer
@@ -44,6 +45,7 @@
         ../modules/nixos/desktop
         ../modules/nixos/desktop/gaming.nix
         ../modules/nixos/users/yang.nix
+        ../modules/nixos/users/guest.nix
       ];
     };
   };
