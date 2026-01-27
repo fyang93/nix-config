@@ -13,10 +13,11 @@
       shellAliases = {
         "ls" = "eza";
         "l" = "eza -lah --icons=auto";
+        "opencode" = "bun $(which opencode)";
       };
       shellInit = ''
         zoxide init fish | source
-        set -gx EDITOR=vim
+        set -gx EDITOR vim
         set -gx BUN_INSTALL "$HOME/.bun"
         fish_add_path "$HOME/.local/bin"
         fish_add_path $BUN_INSTALL
