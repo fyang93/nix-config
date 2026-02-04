@@ -31,7 +31,6 @@
     # extensions
     gnomeExtensions.blur-my-shell
     gnomeExtensions.just-perfection
-    gnomeExtensions.arc-menu
     gnomeExtensions.dash-to-panel
     gnomeExtensions.appindicator
   ];

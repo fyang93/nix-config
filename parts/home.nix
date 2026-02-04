@@ -53,6 +53,7 @@
       };
       modules = [
         ../modules/home-manager/minimal
+        ../modules/home-manager/desktop
       ];
     };
   };
