@@ -13,7 +13,7 @@
 
   home.packages = with pkgs; [
     # browser
-    google-chrome
+    firefox
 
     # im
     telegram-desktop
