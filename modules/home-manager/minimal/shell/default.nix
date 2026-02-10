@@ -32,6 +32,8 @@
     # A command-line fuzzy finder
     fzf = {
       enable = true;
+      fileWidgetCommand = "fd --type f";
+      changeDirWidgetCommand = "fd --type d";
       enableBashIntegration = true;
       enableZshIntegration = true;
     };

@@ -3,6 +3,7 @@
   programs.zsh = {
     enable = true;
     enableCompletion = true;
+    defaultKeymap = "emacs";
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
 
@@ -45,13 +46,12 @@
         mkdir -p ~/.cache/zsh
       '')
       
-      (lib.mkOrder 1000 ''
+      (lib.mkOrder 1500 ''
         export FZF_CTRL_R_OPTS="--layout=reverse --border --height=40%"
         
         # fzf-tab 配置
         zstyle ':completion:*' menu no
-        zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
-        zstyle ':fzf-tab:*' fzf-flags --height=40% --layout=reverse --border
+        zstyle ':fzf-tab:*' fzf-flags --height=40% --layout=reverse --border --preview-window=right:50%
 
         # 智能补全
         zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
@@ -83,16 +83,6 @@
         name = "zsh-fzf-tab";
         src = pkgs.zsh-fzf-tab;
         file = "share/fzf-tab/fzf-tab.plugin.zsh";
-      }
-      {
-        name = "zsh-notify";
-        src = pkgs.fetchFromGitHub {
-          owner = "marzocchi";
-          repo = "zsh-notify";
-          rev = "master";
-          sha256 = "sha256-ovmnl+V1B7J/yav0ep4qVqlZOD3Ex8sfrkC92dXPLFI=";
-        };
-        file = "notify.plugin.zsh";
       }
     ];
   };
