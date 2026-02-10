@@ -5,38 +5,47 @@
     enableCompletion = true;
     defaultKeymap = "emacs";
     autosuggestion.enable = true;
-    syntaxHighlighting.enable = true;
+    syntaxHighlighting = {
+      enable = true;
+      styles = {
+        "command" = "fg=blue,bold";
+        "alias" = "fg=blue,bold";
+        "builtin" = "fg=blue,bold";
+        "function" = "fg=blue,bold";
+        "string" = "fg=yellow";
+      };
+    };
 
     history = {
-      size = 10000;          # 当前会话内存中保存的历史条数
-      save = 100000;         # 写入 ~/.zsh_history 文件的历史条数
+      size = 10000;          # Number of history lines to keep in memory
+      save = 100000;         # Number of history lines to save in ~/.zsh_history
       ignoreAllDups = true;
-      share = true;          # 多终端共享历史
-      extended = true;       # 保存时间戳
+      share = true;          # Share history between multiple terminals
+      extended = true;       # Save timestamps
       path = "$HOME/.zsh_history";
       ignorePatterns = ["rm *" "pkill *" "cp *"];
     };
 
     setOptions = [
-      "INTERACTIVE_COMMENTS" # 允许交互模式中的注释
-      "AUTO_CD"              # 输入目录名直接跳转
-      "GLOB_DOTS"            # 让 * 匹配隐藏文件
-      "EXTENDED_GLOB"        # 更强大的通配符
-      "NO_BEEP"              # 关闭烦人的提示音
+      "INTERACTIVE_COMMENTS" # Allow comments in interactive mode
+      "AUTO_CD"              # Jump to directory by typing its name directly
+      "GLOB_DOTS"            # Allow * to match hidden files
+      "EXTENDED_GLOB"        # Enable advanced globbing features
+      "NO_BEEP"              # Disable annoying beep sounds
     ];
 
     shellAliases = {
       ls = "eza";
       l = "eza -lah --icons=auto";
-      lt = "eza --tree --level=2 --icons=auto";  # 树状视图
+      lt = "eza --tree --level=2 --icons=auto";  # Tree view
       opencode = "bun $(which opencode)";
       codex = "bun $(which codex)";
       cat = "bat -p --paging=never";
 
-      # 安全操作
-      cp = "cp -i";   # 覆盖前确认
-      mv = "mv -i";   # 覆盖前确认
-      rm = "rm -i";   # 删除前确认
+      # Safety operations
+      cp = "cp -i";   # Confirm before overwriting
+      mv = "mv -i";   # Confirm before overwriting
+      rm = "rm -i";   # Confirm before deleting
     };
 
     initContent = lib.mkMerge [
@@ -47,18 +56,12 @@
       '')
       
       (lib.mkOrder 1500 ''
-        export FZF_CTRL_R_OPTS="--layout=reverse --border --height=40%"
-        
-        # fzf-tab 配置
-        zstyle ':completion:*' menu no
-        zstyle ':fzf-tab:*' fzf-flags --height=40% --layout=reverse --border --preview-window=right:50%
-
-        # 智能补全
+        # Smart completion
         zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
         zstyle ':completion:*' list-colors ''${(s.:.)LS_COLORS}
         zstyle ':completion:*:*:*:*:processes' command "ps -u $USER -o pid,user,comm -w -w"
         
-        # SSH 补全 - 从 ~/.ssh/config 提取所有 Host（排除通配符）
+        # SSH completion - Extract all Hosts from ~/.ssh/config (excluding wildcards)
         if [[ -f ~/.ssh/config ]]; then
           ssh_hosts=($(awk '/^Host / && !/\*/ {for(i=2;i<=NF;i++) print $i}' ~/.ssh/config))
           zstyle ':completion:*:(ssh|scp|sftp):*' hosts $ssh_hosts

@@ -34,6 +34,11 @@
       enable = true;
       fileWidgetCommand = "fd --type f";
       changeDirWidgetCommand = "fd --type d";
+      defaultOptions = [
+        "--layout=reverse"
+        "--border"
+        "--height=~60%"
+      ];
       enableBashIntegration = true;
       enableZshIntegration = true;
     };
