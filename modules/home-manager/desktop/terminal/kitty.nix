@@ -1,7 +1,7 @@
 {
   programs.kitty = {
     enable = true;
-    shellIntegration.enableFishIntegration = true;
+    shellIntegration.enableZshIntegration = true;
     settings = {
       window_padding_width = "10 20 10 20";
       cursor_trail = 3;

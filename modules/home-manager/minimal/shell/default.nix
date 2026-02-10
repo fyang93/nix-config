@@ -1,10 +1,24 @@
 { pkgs, ... }:
 {
   imports = [
-    ./fish.nix
+    ./zsh.nix
     # replacement of htop/nmon
     ./btop.nix
     ./bottom.nix
+  ];
+
+  home.packages = with pkgs; [
+    krabby
+  ];
+
+  home.sessionVariables = {
+    EDITOR = "vim";
+    BUN_INSTALL = "$HOME/.bun";
+  };
+
+  home.sessionPath = [
+    "$HOME/.local/bin"
+    "$BUN_INSTALL/bin"
   ];
 
   programs = {
@@ -12,28 +26,28 @@
     starship = {
       enable = true;
       enableBashIntegration = true;
-      enableFishIntegration = true;
+      enableZshIntegration = true;
     };
 
     # A command-line fuzzy finder
     fzf = {
       enable = true;
       enableBashIntegration = true;
-      enableFishIntegration = true;
+      enableZshIntegration = true;
     };
 
     # A smarter cd command
     zoxide = {
       enable = true;
       enableBashIntegration = true;
-      enableFishIntegration = true;
+      enableZshIntegration = true;
     };
 
     # A modern replacement for ls
     eza = {
       enable = true;
       enableBashIntegration = true;
-      enableFishIntegration = true;
+      enableZshIntegration = true;
     };
 
     # a cat(1) clone with syntax highlighting and Git integration.

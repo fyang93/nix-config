@@ -12,7 +12,7 @@ in
     hashedPassword = "$y$j9T$taWQyCw5HrrBRkx8uNHO50$1DIFg45L4E3A9MhjeI4FenL2xNPHDkT5BBH/NtUwlp0";
     home = "/home/${username}";
     isNormalUser = true;
-    shell = pkgs.fish;
+    shell = pkgs.zsh;
     extraGroups = [
       "wheel"
       "networkmanager"

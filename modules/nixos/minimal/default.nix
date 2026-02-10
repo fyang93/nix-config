@@ -28,12 +28,10 @@
   };
 
   programs.zsh.enable = true;
-  programs.fish.enable = true;
 
   # add user's shell into /etc/shells
   environment.shells = with pkgs; [
     bashInteractive
     zsh
-    fish
   ];
 }

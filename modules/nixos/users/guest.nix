@@ -9,7 +9,7 @@ in
     hashedPassword = "$y$j9T$taWQyCw5HrrBRkx8uNHO50$1DIFg45L4E3A9MhjeI4FenL2xNPHDkT5BBH/NtUwlp0";
     home = "/home/${username}";
     isNormalUser = true;
-    shell = pkgs.fish;
+    shell = pkgs.zsh;
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMggbqyvwD9XXdwm/O9/aW8wx4k58hqM/08/gjnChS1b yang"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILb6ayLkxFMHOMDSGcDWu2VgxIyK7Npll8OEBmXLaYGC d@D"

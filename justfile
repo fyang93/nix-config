@@ -5,8 +5,9 @@ default:
     @just --list
 
 alias b := build
-alias m := manage
+alias s := switch
 alias u := update
+alias c := clean
 
 build hostname=HOSTNAME:
     #!/usr/bin/env bash
@@ -14,7 +15,7 @@ build hostname=HOSTNAME:
     [[ -d .git ]] && git add .
     sudo nixos-rebuild switch --flake ".#{{hostname}}" --show-trace
 
-manage homeconf=HOMECONF:
+switch homeconf=HOMECONF:
     #!/usr/bin/env bash
     set -euo pipefail
     [[ -d .git ]] && git add .
@@ -30,3 +31,8 @@ update message="update":
     fi
     git commit -m "{{message}}"
     git push
+
+clean:
+    #!/usr/bin/env bash
+    home-manager expire-generations "-7 days"
+    nix-collect-garbage -d
