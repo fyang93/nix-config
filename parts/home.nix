@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ inputs, secrets, ... }:
 {
   flake.homeConfigurations = {
     "yang@wsl" = inputs.home-manager.lib.homeManagerConfiguration {
@@ -6,6 +6,7 @@
       extraSpecialArgs = {
         username = "yang";
         useremail = "norepfy@gmail.com";
+        inherit secrets;
       };
       modules = [
         ../modules/home-manager/minimal
@@ -16,6 +17,7 @@
       extraSpecialArgs = {
         username = "yang";
         useremail = "norepfy@gmail.com";
+        inherit secrets;
       };
       modules = [
         inputs.stylix.homeModules.stylix
@@ -28,6 +30,7 @@
       extraSpecialArgs = {
         username = "yang";
         useremail = "norepfy@gmail.com";
+        inherit secrets;
       };
       modules = [
         inputs.stylix.homeModules.stylix
@@ -40,6 +43,7 @@
       extraSpecialArgs = {
         username = "guest";
         useremail = "guest@mail.com";
+        inherit secrets;
       };
       modules = [
         ../modules/home-manager/minimal
@@ -50,6 +54,7 @@
       extraSpecialArgs = {
         username = "david";
         useremail = "david@mail.com";
+        inherit secrets;
       };
       modules = [
         ../modules/home-manager/minimal

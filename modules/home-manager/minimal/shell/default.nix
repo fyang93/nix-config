@@ -1,10 +1,8 @@
 { pkgs, ... }:
 {
   imports = [
-    ./zsh.nix
-    # replacement of htop/nmon
+    ./bash.nix
     ./btop.nix
-    ./bottom.nix
   ];
 
   home.packages = with pkgs; [
@@ -13,7 +11,9 @@
 
   home.sessionVariables = {
     EDITOR = "vim";
+    UV_CACHE_DIR = "$HOME/.cache/uv";
     BUN_INSTALL = "$HOME/.bun";
+    BUN_INSTALL_CACHE_DIR = "$HOME/.cache/bun";
   };
 
   home.sessionPath = [
@@ -27,6 +27,7 @@
       enable = true;
       enableBashIntegration = true;
       enableZshIntegration = true;
+      enableFishIntegration = true;
     };
 
     # A command-line fuzzy finder
@@ -34,13 +35,9 @@
       enable = true;
       fileWidgetCommand = "fd --type f";
       changeDirWidgetCommand = "fd --type d";
-      defaultOptions = [
-        "--layout=reverse"
-        "--border"
-        "--height=~60%"
-      ];
-      enableBashIntegration = true;
+      enableBashIntegration = false; # managed by ble.sh
       enableZshIntegration = true;
+      enableFishIntegration = true;
     };
 
     # A smarter cd command
@@ -48,6 +45,7 @@
       enable = true;
       enableBashIntegration = true;
       enableZshIntegration = true;
+      enableFishIntegration = true;
     };
 
     # A modern replacement for ls
@@ -55,6 +53,7 @@
       enable = true;
       enableBashIntegration = true;
       enableZshIntegration = true;
+      enableFishIntegration = true;
     };
 
     # a cat(1) clone with syntax highlighting and Git integration.

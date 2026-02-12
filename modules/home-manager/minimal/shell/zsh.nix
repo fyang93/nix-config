@@ -5,17 +5,8 @@
     enableCompletion = true;
     defaultKeymap = "emacs";
     autosuggestion.enable = true;
-    syntaxHighlighting = {
-      enable = true;
-      styles = {
-        "command" = "fg=blue,bold";
-        "alias" = "fg=blue,bold";
-        "builtin" = "fg=blue,bold";
-        "function" = "fg=blue,bold";
-        "string" = "fg=yellow";
-      };
-    };
-
+    syntaxHighlighting.enable = true;
+ 
     history = {
       size = 10000;          # Number of history lines to keep in memory
       save = 100000;         # Number of history lines to save in ~/.zsh_history
@@ -35,12 +26,11 @@
     ];
 
     shellAliases = {
-      ls = "eza";
       l = "eza -lah --icons=auto";
-      lt = "eza --tree --level=2 --icons=auto";  # Tree view
+      lt = "eza --tree --level=2 --icons=auto";
+      cat = "bat --style=plain --paging=never";
       opencode = "bun $(which opencode)";
       codex = "bun $(which codex)";
-      cat = "bat -p --paging=never";
 
       # Safety operations
       cp = "cp -i";   # Confirm before overwriting
@@ -67,7 +57,7 @@
           zstyle ':completion:*:(ssh|scp|sftp):*' hosts $ssh_hosts
         fi
 
-        if [[ -o interactive ]]; then
+        if [[ $- == *i* ]]; then
           export LANGUAGE=en
           command -v krabby >/dev/null && krabby random 1-3 | tail -n +2
         fi
@@ -78,6 +68,8 @@
       enable = true;
       abbreviations = {
         cd = "z";
+        g = "git";
+        j = "just";
       };
     };
 
@@ -86,6 +78,16 @@
         name = "zsh-fzf-tab";
         src = pkgs.zsh-fzf-tab;
         file = "share/fzf-tab/fzf-tab.plugin.zsh";
+      }
+      {
+        name = "zsh-syntax-highlighting-catppuccin";
+        src = pkgs.fetchFromGitHub {
+          owner = "catppuccin";
+          repo = "zsh-syntax-highlighting";
+          rev = "main";
+          hash = "sha256-l6tztApzYpQ2/CiKuLBf8vI2imM6vPJuFdNDSEi7T/o=";
+        };
+        file = "themes/catppuccin_mocha-zsh-syntax-highlighting.zsh";  # flavor: latte, frappe, macchiato, mocha
       }
     ];
   };
