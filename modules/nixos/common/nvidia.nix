@@ -6,7 +6,7 @@
   };
 
   hardware.nvidia = {
-    open = true;
+    # open = true;
     modesetting.enable = true;
     powerManagement.enable = true;
   };
