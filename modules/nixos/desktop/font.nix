@@ -15,7 +15,7 @@
 
       # core
       maple-mono.variable
-      lxgw-neoxihei
+      # lxgw-neoxihei
 
       # extra
       noto-fonts
@@ -41,11 +41,12 @@
         ];
         sansSerif = [
           "HarmonyOS Sans"
-          "LXGW Neo XiHei"
+          #"LXGW Neo XiHei"
         ];
         monospace = [
           "Maple Mono"
-          "LXGW Neo XiHei"
+          "HarmonyOS Sans"
+          #"LXGW Neo XiHei"
         ];
         emoji = [ "Noto Color Emoji" ];
       };
