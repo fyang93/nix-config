@@ -67,6 +67,10 @@
     bleopt exec_errexit_mark=
     # bleopt exec_exit_mark=
 
+    # fzf integration
+    ble-import -d integration/fzf-completion
+    ble-import -d integration/fzf-key-bindings
+
     ble-bind -x C-l 'command clear -x'
 
     # issue: https://github.com/akinomyoga/ble.sh/issues/96
