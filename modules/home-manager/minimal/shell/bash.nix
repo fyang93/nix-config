@@ -54,7 +54,7 @@
         source -- ${pkgs.blesh}/share/blesh/ble.sh
       fi
 
-      command -v krabby >/dev/null 2>&1 && krabby random 1-3 | tail -n +2
+      command -v krabby >/dev/null 2>&1 && krabby random 1-3 --no-mega --no-gmax | tail -n +2
     '';
   };
 
