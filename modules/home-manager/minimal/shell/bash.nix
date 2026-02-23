@@ -27,8 +27,6 @@
 
     # Note that these commands will be run even in non-interactive shells
     bashrcExtra = ''
-      export LANGUAGE=en
-      
       if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
         . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
       fi
@@ -60,6 +58,7 @@
         source ${pkgs.blesh}/share/blesh/ble.sh
       fi
 
+      export LANGUAGE=en
       command -v krabby >/dev/null 2>&1 && krabby random 1-3 | tail -n +2
     '';
   };
