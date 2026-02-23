@@ -48,18 +48,12 @@
       }
       PROMPT_COMMAND="__history_sync''${PROMPT_COMMAND:+;$PROMPT_COMMAND}"
 
-      if [ -d "$HOME/.config/bash/completions" ]; then
-        for f in "$HOME/.config/bash/completions"/*.bash; do
-          source "$f"
-        done
-      fi
-
       if [[ -f ${pkgs.blesh}/share/blesh/ble.sh ]]; then
-        source ${pkgs.blesh}/share/blesh/ble.sh
+        source -- ${pkgs.blesh}/share/blesh/ble.sh
       fi
 
       export LANGUAGE=en
-      command -v krabby >/dev/null 2>&1 && krabby random 1-3 | tail -n +2
+      command -v krabby >/dev/null 2>&1 && krabby random 1-3 --no-mega --no-gmax | tail -n +2
     '';
   };
 
@@ -72,7 +66,14 @@
     bleopt exec_errexit_mark=
     # bleopt exec_exit_mark=
 
+    # fzf integration
+    ble-import -d integration/fzf-completion
+    ble-import -d integration/fzf-key-bindings
+
     ble-bind -x C-l 'command clear -x'
+
+    # issue: https://github.com/akinomyoga/ble.sh/issues/96
+    ble/path#remove-glob PATH '/mnt/*'
 
     # Catppuccin Mocha inspired theme for ble.sh
     ble-face command_alias='fg=#a6e3a1,italic'
@@ -101,16 +102,12 @@
     ble-sabbrev j=just
   '';
 
-  home.file.".config/bash/completions/ssh-fzf.bash".text = ''
-    _fzf_complete_ssh() {
-      # No config → fallback to normal completion
-      [[ -f ~/.ssh/config ]] || return
-
-      _fzf_complete --prompt="ssh> " -- "$@" < <(
-        awk '/^Host / && !/\*/ {for(i=2;i<=NF;i++) print $i}' ~/.ssh/config
-      )
-    }
-
-    complete -F _fzf_complete_ssh -o default -o bashdefault ssh
-  '';
+  # explorer for wsl
+  home.file.".local/bin/explorer" = {
+    text = ''
+      #!/usr/bin/env bash
+      exec /mnt/c/Windows/explorer.exe "$@"
+    '';
+    executable = true;
+  };
 }
