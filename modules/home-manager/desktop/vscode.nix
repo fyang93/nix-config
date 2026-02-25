@@ -9,7 +9,8 @@
         eamodio.gitlens
         christian-kohler.path-intellisense
         ms-vscode-remote.remote-ssh
-        # ms-vscode-remote.remote-ssh-edit
+        ms-vscode-remote.remote-ssh-edit
+        ms-vscode.remote-explorer
         tekumara.typos-vscode
         usernamehw.errorlens
         yzhang.dictionary-completion
