@@ -3,6 +3,7 @@
   stylix = {
     enable = true;
     autoEnable = true;
+    targets.fcitx5.enable = false;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
     polarity = "dark";
     cursor = {
@@ -11,14 +12,22 @@
       size = 24;
     };
     fonts = {
-      monospace.name = "Maple Mono";
-      monospace.package = pkgs.maple-mono.variable;
-      sansSerif.name = "LXGW NeoXiHei";
-      sansSerif.package = pkgs.lxgw-neoxihei;
-      serif.name = "LXGW NeoXiHei";
-      serif.package = pkgs.lxgw-neoxihei;
-      emoji.name = "Noto Color Emoji";
-      emoji.package = pkgs.noto-fonts-color-emoji;
+      monospace = {
+        name = "Maple Mono";
+        package = pkgs.maple-mono.variable;
+      };
+      serif = {
+        name = "Noto Serif";
+        package = pkgs.noto-fonts;
+      };
+      sansSerif = {
+        name = "Noto Sans";
+        package = pkgs.noto-fonts;
+      };
+      emoji = {
+        name = "Noto Color Emoji";
+        package = pkgs.noto-fonts-color-emoji;
+      };
     };
     fonts.sizes = {
       terminal = 12;
