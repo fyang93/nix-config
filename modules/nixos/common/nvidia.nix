@@ -6,7 +6,7 @@
   };
 
   hardware.nvidia = {
-    open = false; # closed-source module kernel
+    open = true;
     modesetting.enable = true;
     powerManagement.enable = true;
   };

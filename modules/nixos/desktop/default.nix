@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   imports = [
-    ./gnome.nix
+    ./cosmic.nix
     ./font.nix
     ./audio.nix
   ];
