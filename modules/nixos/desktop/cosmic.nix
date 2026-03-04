@@ -11,6 +11,7 @@
     cosmic-edit
     cosmic-term
     cosmic-player
+    cosmic-reader
   ];
 
   environment.sessionVariables.COSMIC_DATA_CONTROL_ENABLED = 1;
