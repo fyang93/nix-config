@@ -4,9 +4,11 @@
     enable = true;
     profiles.default = {
       extensions = with pkgs.vscode-extensions; [
+        ms-ceintl.vscode-language-pack-zh-hans
         vscodevim.vim
         mkhl.direnv
         eamodio.gitlens
+        naumovs.color-highlight
         christian-kohler.path-intellisense
         ms-vscode-remote.remote-ssh
         ms-vscode-remote.remote-ssh-edit
