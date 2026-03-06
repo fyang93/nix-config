@@ -24,10 +24,4 @@ in
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMggbqyvwD9XXdwm/O9/aW8wx4k58hqM/08/gjnChS1b yang"
     ];
   };
-  
-  services.displayManager.autoLogin = {
-    enable = true;
-    # Replace `yourUserName` with the actual username of user who should be automatically logged in
-    user = username;
-  };
 }
