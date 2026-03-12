@@ -38,6 +38,7 @@
         vim.useSystemClipboard = true;
         editor.minimap.showSlider = "always";
         terminal.integrated.sendKeybindingsToShell = true;
+        terminal.integrated.allowChords = false;
       };
     };
   };
