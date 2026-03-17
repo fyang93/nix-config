@@ -16,4 +16,25 @@
       RestartSec = 5;
     };
   };
+
+  systemd.services.easytier-watchdog = {
+    description = "EasyTier Watchdog";
+    after = [ "easytier.service" ];
+    serviceConfig = {
+      Type = "oneshot";
+      ExecStart = pkgs.writeShellScript "easytier-watchdog" ''
+        if ! ping -c 3 -W 5 10.10.10.1 > /dev/null 2>&1; then
+          systemctl restart easytier
+        fi
+      '';
+    };
+  };
+
+  systemd.timers.easytier-watchdog = {
+    wantedBy = [ "timers.target" ];
+    timerConfig = {
+      OnBootSec = "1min";
+      OnUnitActiveSec = "1min";
+    };
+  };
 }

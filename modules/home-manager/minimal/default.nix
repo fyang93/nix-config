@@ -15,8 +15,6 @@
     dig # DNS lookup
     fd
     ripgrep
-    yazi
-    pay-respects
   ];
 
   home.username = username;
