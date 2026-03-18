@@ -10,6 +10,7 @@
       bold_font = "family='Maple Mono' style=Bold";
       initial_window_width  = "200c";
       initial_window_height = "50c";
+      tab_bar_edge = "top";
     };
   };
 }
