@@ -33,8 +33,8 @@
   systemd.timers.easytier-watchdog = {
     wantedBy = [ "timers.target" ];
     timerConfig = {
-      OnBootSec = "5min";
-      OnUnitActiveSec = "5min";
+      OnBootSec = "1min";
+      OnUnitActiveSec = "1min";
     };
   };
 }
