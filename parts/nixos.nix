@@ -21,6 +21,7 @@
       };
       modules = [
         ../hosts/nas
+        ../modules/nixos/common/graphics.nix
         ../modules/nixos/common/networkmanager
         ../modules/nixos/minimal
         ../modules/nixos/desktop
@@ -37,6 +38,7 @@
       };
       modules = [
         ../hosts/gamer
+        ../modules/nixos/common/graphics.nix
         ../modules/nixos/common/nvidia.nix
         ../modules/nixos/common/bluetooth.nix
         ../modules/nixos/common/networkmanager
