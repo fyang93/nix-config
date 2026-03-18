@@ -180,4 +180,13 @@
     '';
     executable = true;
   };
+
+  # vscode for wsl
+  home.file.".local/bin/code" = {
+    text = ''
+      #!/usr/bin/env bash
+      exec "/mnt/c/Users/fyang/AppData/Local/Programs/Microsoft VS Code/Code.exe" "$@"
+    '';
+    executable = true;
+  };
 }
