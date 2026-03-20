@@ -173,7 +173,7 @@
   '';
 
   # explorer for wsl
-  home.file.".local/bin/explorer" = {
+  home.file.".local/bin/explorer.exe" = {
     text = ''
       #!/usr/bin/env bash
       exec /mnt/c/Windows/explorer.exe "$@"
@@ -182,7 +182,7 @@
   };
 
   # vscode for wsl
-  home.file.".local/bin/code" = {
+  home.file.".local/bin/code.exe" = {
     text = ''
       #!/usr/bin/env bash
       exec "/mnt/c/Users/fyang/AppData/Local/Programs/Microsoft VS Code/Code.exe" "$@"
