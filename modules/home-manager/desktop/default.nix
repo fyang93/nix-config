@@ -13,10 +13,11 @@
 
   home.packages = with pkgs; [
     # browser
-    firefox
+    google-chrome
 
     # im
     telegram-desktop
+    discord
     slack
     wechat
 

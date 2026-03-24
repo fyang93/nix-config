@@ -33,5 +33,6 @@
     gnomeExtensions.just-perfection
     gnomeExtensions.dash-to-panel
     gnomeExtensions.appindicator
+    gnomeExtensions.kimpanel
   ];
 }
