@@ -6,7 +6,7 @@ default:
 
 alias b := build
 alias s := switch
-alias u := update
+alias p := push
 alias c := clean
 
 build hostname=HOSTNAME:
@@ -21,7 +21,7 @@ switch homeconf=HOMECONF:
     [[ -d .git ]] && git add .
     home-manager switch --flake ".#{{homeconf}}" -L
 
-update message="update":
+push message="update":
     #!/usr/bin/env bash
     set -euo pipefail
     git add .

@@ -8,6 +8,7 @@
       };
       modules = [
         inputs.nixos-wsl.nixosModules.default
+        inputs.determinate.nixosModules.default
         ../hosts/wsl
         ../modules/nixos/minimal
         ../modules/nixos/users/yang.nix
@@ -20,6 +21,7 @@
 	      inherit secrets;
       };
       modules = [
+        inputs.determinate.nixosModules.default
         ../hosts/nas
         ../modules/nixos/common/graphics.nix
         ../modules/nixos/common/networkmanager
@@ -36,6 +38,7 @@
         inherit secrets;
       };
       modules = [
+        inputs.determinate.nixosModules.default
         ../hosts/gamer
         ../modules/nixos/common/graphics.nix
         ../modules/nixos/common/nvidia.nix

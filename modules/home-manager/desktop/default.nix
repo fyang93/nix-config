@@ -13,6 +13,7 @@
 
   home.packages = with pkgs; [
     # browser
+    firefox
     google-chrome
 
     # im
