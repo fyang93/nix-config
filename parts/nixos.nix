@@ -26,7 +26,6 @@
         ../modules/nixos/minimal
         ../modules/nixos/desktop
         ../modules/nixos/users/yang.nix
-        ../modules/nixos/users/david.nix
         ../modules/nixos/users/guest.nix
       ];
     };

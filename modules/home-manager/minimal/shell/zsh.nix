@@ -31,11 +31,6 @@
       cat = "bat --style=plain --paging=never";
       opencode = "bun $(which opencode)";
       codex = "bun $(which codex)";
-
-      # Safety operations
-      cp = "cp -i";   # Confirm before overwriting
-      mv = "mv -i";   # Confirm before overwriting
-      rm = "rm -i";   # Confirm before deleting
     };
 
     initContent = lib.mkMerge [

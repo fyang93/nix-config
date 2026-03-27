@@ -8,21 +8,18 @@
       j = "just";
     };
     shellAliases = {
-      l = "eza -lah --icons=auto";
-      lt = "eza --tree --level=2 --icons=auto";
-      cat = "bat -p --paging=never";
-      opencode = "bun $(which opencode)";
-      codex = "bun $(which codex)";
+      l = "eza -lah";
+      lt = "eza --tree --level=2";
+      cat = "bat --style=plain --paging=never";
+      opencode = "bunx opencode";
     };
-    shellInit = ''
+    interactiveShellInit = ''
       zoxide init fish | source
-      set -g fish_color_command = blue --italics
-      set -g fish_color_quote = yellow --italics
-      # only print pokemons on interactive shells
-      if status --is-interactive
-        set -gx LANGUAGE en
-        command -q krabby && krabby random 1-3 | tail -n +2
-      end
+      set -g fish_features no-expand-full qmark-noglob stderr-nocaret
+      set -ga fish_color_command --italics
+      set -ga fish_color_quote --italics
+
+      set -gx LANGUAGE en
     '';
     plugins = with pkgs.fishPlugins; [
       {
@@ -35,7 +32,10 @@
       }
     ];
     functions = {
-      fish_greeting = "";
+      fish_greeting = ''
+        # print pokemons
+        command -q krabby && krabby random 1-3 | tail -n +2
+      '';
       fish_config = "";
     };
   };

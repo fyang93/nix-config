@@ -27,11 +27,6 @@
     lfs.enable = true;
   };
 
-  programs.zsh.enable = true;
-
-  # add user's shell into /etc/shells
-  environment.shells = with pkgs; [
-    bashInteractive
-    zsh
-  ];
+  programs.bash.enable = true;
+  programs.fish.enable = true;
 }

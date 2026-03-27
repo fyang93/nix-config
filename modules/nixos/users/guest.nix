@@ -9,11 +9,10 @@ in
     hashedPassword = "$y$j9T$taWQyCw5HrrBRkx8uNHO50$1DIFg45L4E3A9MhjeI4FenL2xNPHDkT5BBH/NtUwlp0";
     home = "/home/${username}";
     isNormalUser = true;
-    shell = pkgs.zsh;
+    shell = pkgs.bash;
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMggbqyvwD9XXdwm/O9/aW8wx4k58hqM/08/gjnChS1b yang"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILb6ayLkxFMHOMDSGcDWu2VgxIyK7Npll8OEBmXLaYGC d@D"
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILxRG5PdoPiWifFi87f8MfjQnxDq0epXM0HxxIz2nqJU carlo"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAsOLOVsTiRmnmGko+kFvI096quzAR12zAVYeUaPR6+O bowen@8488c"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINzeRMKUYDakQJY6+dLAMJQYKxyYqDR2yVoWVvx0pgEg noelsun"
     ];
