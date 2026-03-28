@@ -6,9 +6,8 @@ default:
 
 alias b := build
 alias s := switch
-alias u := update
 alias c := clean
-alias p := push
+alias u := update
 
 build hostname=HOSTNAME:
     #!/usr/bin/env bash
@@ -22,16 +21,12 @@ switch homeconf=HOMECONF:
     [[ -d .git ]] && git add .
     home-manager switch --flake ".#{{homeconf}}" -L
 
-update:
-    #!/usr/bin/env bash
-    nix flake update
-
 clean:
     #!/usr/bin/env bash
     home-manager expire-generations "-7 days"
     nix-collect-garbage -d
 
-push message="update":
+update message="update":
     #!/usr/bin/env bash
     set -euo pipefail
     git add .
