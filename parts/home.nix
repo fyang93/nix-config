@@ -49,17 +49,5 @@
         ../modules/home-manager/minimal
       ];
     };
-    "david@nas" = inputs.home-manager.lib.homeManagerConfiguration {
-      pkgs = inputs.nixpkgs.legacyPackages."x86_64-linux";
-      extraSpecialArgs = {
-        username = "david";
-        useremail = "david@mail.com";
-        inherit secrets;
-      };
-      modules = [
-        ../modules/home-manager/minimal
-        ../modules/home-manager/desktop
-      ];
-    };
   };
 }

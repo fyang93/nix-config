@@ -12,6 +12,8 @@
   home.sessionVariables = {
     EDITOR = "vim";
     UV_CACHE_DIR = "$HOME/.cache/uv";
+    NPM_CONFIG_PREFIX = "$HOME/.npm";
+    NPM_CONFIG_CACHE = "$HOME/.cache/npm";
     BUN_INSTALL = "$HOME/.bun";
     BUN_INSTALL_CACHE_DIR = "$HOME/.cache/bun";
   };
