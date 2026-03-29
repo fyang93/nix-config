@@ -20,6 +20,7 @@
 
   home.sessionPath = [
     "$HOME/.local/bin"
+    "$NPM_CONFIG_PREFIX/bin"
     "$BUN_INSTALL/bin"
   ];
 
