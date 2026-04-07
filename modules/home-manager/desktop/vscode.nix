@@ -33,6 +33,7 @@
         rust-lang.rust-analyzer
       ];
       userSettings = {
+        update.mode = "none";
         editor.wordWrap = "on";
         security.workspace.trust.enabled = false;
         vim.useSystemClipboard = true;

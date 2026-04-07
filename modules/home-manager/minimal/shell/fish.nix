@@ -14,12 +14,12 @@
       opencode = "bunx opencode";
     };
     interactiveShellInit = ''
+      set -gx LANGUAGE en
       zoxide init fish | source
       set -g fish_features no-expand-full qmark-noglob stderr-nocaret
+      fish_config theme choose "catppuccin-mocha"
       set -ga fish_color_command --italics
       set -ga fish_color_quote --italics
-
-      set -gx LANGUAGE en
     '';
     plugins = with pkgs.fishPlugins; [
       {
@@ -36,7 +36,6 @@
         # print pokemons
         command -q krabby && krabby random 1-3 | tail -n +2
       '';
-      fish_config = "";
     };
   };
 }
