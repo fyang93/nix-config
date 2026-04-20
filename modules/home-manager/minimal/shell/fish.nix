@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, secrets, ... }:
 {
   programs.fish = {
     enable = true;
@@ -13,6 +13,9 @@
       cat = "bat --style=plain --paging=never";
       opencode = "bunx opencode";
     };
+    shellInitLast = lib.concatStringsSep "\n" (
+      lib.mapAttrsToList (k: v: "set -gx ${k} ${lib.escapeShellArg v}") secrets.env
+    );
     interactiveShellInit = ''
       set -gx LANGUAGE en
       zoxide init fish | source
