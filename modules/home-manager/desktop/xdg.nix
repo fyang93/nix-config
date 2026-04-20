@@ -13,14 +13,14 @@
       enable = true;
       createDirectories = true;
 
-      desktop = "${config.home.homeDirectory}/desktop";
-      download = "${config.home.homeDirectory}/downloads";
-      templates = "${config.home.homeDirectory}/templates";
-      publicShare = "${config.home.homeDirectory}/share";
-      documents = "${config.home.homeDirectory}/documents";
-      music = "${config.home.homeDirectory}/music";
-      pictures = "${config.home.homeDirectory}/pictures";
-      videos = "${config.home.homeDirectory}/videos";
+      # desktop = "${config.home.homeDirectory}/desktop";
+      # download = "${config.home.homeDirectory}/downloads";
+      # templates = "${config.home.homeDirectory}/templates";
+      # publicShare = "${config.home.homeDirectory}/share";
+      # documents = "${config.home.homeDirectory}/documents";
+      # music = "${config.home.homeDirectory}/music";
+      # pictures = "${config.home.homeDirectory}/pictures";
+      # videos = "${config.home.homeDirectory}/videos";
     };
   };
 }
