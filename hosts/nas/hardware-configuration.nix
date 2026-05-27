@@ -18,6 +18,21 @@
       fsType = "ext4";
     };
 
+  fileSystems."/storage" = {
+    device = "/dev/disk/by-uuid/3f51588c-ba3f-4e63-9e47-a710f06b0556";
+    fsType = "btrfs";
+
+    options = [
+      "compress=zstd"
+      "noatime"
+      "space_cache=v2"
+    ];
+  };
+
+  systemd.tmpfiles.rules = [
+    "d /storage 2777 root storage -"
+  ];
+
   swapDevices =
     [ { device = "/dev/disk/by-uuid/04369620-2657-472c-ab25-40a9e88eabee"; }
     ];
