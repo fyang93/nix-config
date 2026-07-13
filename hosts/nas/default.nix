@@ -13,6 +13,14 @@
     #./frp.nix
   ];
 
+  environment.systemPackages = with pkgs; [
+    btrfs-progs
+  ];
+
+  users.groups.storage = {
+    members = [ "yang" "guest" ];
+  };
+
   # Bootloader.
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/nvme0n1";
