@@ -36,8 +36,8 @@
     # A command-line fuzzy finder
     fzf = {
       enable = true;
-      fileWidgetCommand = "fd --type f";
-      changeDirWidgetCommand = "fd --type d";
+      fileWidget.command = "fd --type f";
+      changeDirWidget.command = "fd --type d";
       enableBashIntegration = false; # managed by ble.sh
       enableZshIntegration = true;
       enableFishIntegration = true;

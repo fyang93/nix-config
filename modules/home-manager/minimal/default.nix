@@ -11,7 +11,7 @@
   nixpkgs.config.allowUnfree = true;
 
   home.packages = with pkgs; [
-    fastfetchMinimal
+    fastfetch
     dig # DNS lookup
     fd
     ripgrep

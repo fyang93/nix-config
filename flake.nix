@@ -7,7 +7,7 @@
     flake-parts.url = "github:hercules-ci/flake-parts";
 
     nixos-wsl = {
-      url = "github:nix-community/NixOS-WSL/release-25.05";
+      url = "github:nix-community/NixOS-WSL/main";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

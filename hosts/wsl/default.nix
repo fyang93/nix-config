@@ -6,9 +6,11 @@
 
   wsl = {
     enable = true;
-    wrapBinSh = false; # https://github.com/microsoft/vscode-remote-release/issues/10375
+    #wrapBinSh = false; # https://github.com/microsoft/vscode-remote-release/issues/10375
     useWindowsDriver = true; # required by nvidia-container-toolkit-cdi-generator
     defaultUser = "${username}";
+    docker-desktop.enable = true;
+    interop.register = true;
   };
 
   networking.hostName = "wsl"; # Define your hostname.
@@ -37,5 +39,5 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "23.05"; # Did you read the comment?
+  system.stateVersion = "26.05"; # Did you read the comment?
 }
