@@ -1,8 +1,9 @@
 { username, ... }:
 {
-  imports = [
-    ./hardware-configuration.nix
-  ];
+  imports =
+    [ # Include the results of the hardware scan.
+      ./hardware-configuration.nix
+    ];
 
   wsl = {
     enable = true;

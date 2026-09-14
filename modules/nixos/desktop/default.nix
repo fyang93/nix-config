@@ -1,9 +1,9 @@
 { pkgs, ... }:
 {
   imports = [
-    ./cosmic.nix
-    ./font.nix
+    ./kde.nix
     ./audio.nix
+    ./font.nix
   ];
 
   environment.sessionVariables = {

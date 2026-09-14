@@ -8,7 +8,6 @@
     ./vscode.nix
     ./obs.nix
     ./mpv.nix
-    ./stylix.nix
   ];
 
   home.packages = with pkgs; [

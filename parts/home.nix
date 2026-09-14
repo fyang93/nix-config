@@ -12,12 +12,12 @@
         ../modules/home-manager/minimal
       ];
     };
-    "yang@gamer" = inputs.home-manager.lib.homeManagerConfiguration {
+    "yang@home" = inputs.home-manager.lib.homeManagerConfiguration {
       pkgs = inputs.nixpkgs.legacyPackages."x86_64-linux";
       extraSpecialArgs = {
         username = "yang";
         useremail = "norepfy@gmail.com";
-        inherit secrets;
+        inherit secrets inputs;
       };
       modules = [
         inputs.stylix.homeModules.stylix

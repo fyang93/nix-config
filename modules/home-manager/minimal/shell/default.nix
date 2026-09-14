@@ -7,6 +7,7 @@
 
   home.packages = with pkgs; [
     krabby
+    tinty
   ];
 
   home.sessionVariables = {

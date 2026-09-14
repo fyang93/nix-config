@@ -18,8 +18,7 @@
       zoxide init fish | source
       set -g fish_features no-expand-full qmark-noglob stderr-nocaret
       fish_config theme choose "catppuccin-mocha"
-      set -ga fish_color_command --italics
-      set -ga fish_color_quote --italics
+      tinty init
     '';
     plugins = with pkgs.fishPlugins; [
       {

@@ -20,10 +20,10 @@
       # extra
       noto-fonts
 
-      # 添加自定义字体
+      # custom fonts
       (stdenvNoCC.mkDerivation {
         name = "my-custom-fonts";
-        src = ./fonts; # 使用绝对路径
+        src = ../../../fonts;
 
         installPhase = ''
           mkdir -p $out/share/fonts/truetype
@@ -50,11 +50,8 @@
         ];
         emoji = [ "Noto Color Emoji" ];
       };
-      antialias = true; # 抗锯齿
-      hinting.enable = false; # 禁止字体微调 - 高分辨率下没这必要
-      subpixel = {
-        rgba = "rgb"; # IPS 屏幕使用 rgb 排列
-      };
+      antialias = true;
+      hinting.enable = false;
     };
   };
 

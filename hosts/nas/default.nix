@@ -5,13 +5,13 @@
 { pkgs, ... }:
 
 {
-  imports = [
-    # Include the results of the hardware scan.
-    ./hardware-configuration.nix
-    ./nii-auth.nix
-    ./easytier.nix
-    #./frp.nix
-  ];
+  imports =
+    [ # Include the results of the hardware scan.
+      ./hardware-configuration.nix
+      ./nii-auth.nix
+      ./easytier.nix
+      #./frp.nix
+    ];
 
   environment.systemPackages = with pkgs; [
     btrfs-progs
