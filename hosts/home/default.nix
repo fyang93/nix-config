@@ -13,6 +13,8 @@
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
+  # systemd 260 otherwise fails updates when the installed EFI binary is already current.
+  boot.loader.systemd-boot.graceful = true;
   boot.loader.efi.canTouchEfiVariables = true;
   
   networking.hostName = "home"; # Define your hostname.
@@ -83,8 +85,9 @@
   # services.openssh.enable = true;
 
   # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
+  # 8189/8889 for live camera
+  networking.firewall.allowedTCPPorts = [ 8889 ];
+  networking.firewall.allowedUDPPorts = [ 8189 ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 

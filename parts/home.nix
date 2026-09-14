@@ -20,7 +20,6 @@
         inherit secrets inputs;
       };
       modules = [
-        inputs.stylix.homeModules.stylix
         ../modules/home-manager/minimal
         ../modules/home-manager/desktop
       ];
@@ -33,7 +32,6 @@
         inherit secrets;
       };
       modules = [
-        inputs.stylix.homeModules.stylix
         ../modules/home-manager/minimal
         ../modules/home-manager/desktop
       ];
