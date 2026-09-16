@@ -5,13 +5,14 @@
 { pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ./nii-auth.nix
-      ./easytier.nix
-      #./frp.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    ./nii-auth.nix
+    ./easytier.nix
+    ./openlist.nix
+    #./frp.nix
+  ];
 
   environment.systemPackages = with pkgs; [
     btrfs-progs
@@ -80,8 +81,8 @@
   # services.openssh.enable = true;
 
   # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
+  networking.firewall.allowedTCPPorts = [ 8787 ];
+  networking.firewall.allowedUDPPorts = [ 8787 ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 

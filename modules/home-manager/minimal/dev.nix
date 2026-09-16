@@ -5,6 +5,9 @@
     uv
     bun
     nodejs_22
+
+    gnumake
+    gcc
     
     # LSP: https://opencode.ai/docs/lsp/
     pyright

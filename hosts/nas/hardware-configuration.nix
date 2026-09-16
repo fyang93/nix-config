@@ -18,19 +18,34 @@
       fsType = "ext4";
     };
 
-  fileSystems."/storage" = {
-    device = "/dev/disk/by-uuid/3f51588c-ba3f-4e63-9e47-a710f06b0556";
+  fileSystems."/storage/disk1" = {
+    device = "/dev/disk/by-uuid/48c29eda-1805-4693-8372-1daf23796371";
     fsType = "btrfs";
-
     options = [
       "compress=zstd"
       "noatime"
-      "space_cache=v2"
+      "nofail"
+      "x-systemd.device-timeout=5s"
+    ];
+  };
+
+  fileSystems."/storage/disk2" = {
+    device = "/dev/disk/by-uuid/2b92485a-0050-4ca5-a530-1181e2c77f93";
+    fsType = "btrfs";
+    options = [
+      "compress=zstd"
+      "noatime"
+      "nofail"
+      "x-systemd.device-timeout=5s"
     ];
   };
 
   systemd.tmpfiles.rules = [
-    "d /storage 2777 root storage -"
+    "d /storage 0755 root root -"
+    "d /storage/disk1 2770 root storage -"
+    "a+ /storage/disk1 - - - - d:g::rwx,d:m:rwx,d:o:---"
+    "d /storage/disk2 2770 root storage -"
+    "a+ /storage/disk2 - - - - d:g::rwx,d:m:rwx,d:o:---"
   ];
 
   swapDevices =
