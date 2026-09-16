@@ -3,7 +3,7 @@
 
   inputs = {
     determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/*";
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     flake-parts.url = "github:hercules-ci/flake-parts";
     nixos-wsl = {
       url = "github:nix-community/NixOS-WSL/main";
@@ -11,7 +11,7 @@
     };
     home-manager = {
       # Keep Home Manager aligned with the selected NixOS release.
-      url = "github:nix-community/home-manager/release-26.05";
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     # daeuniverse.url = "github:daeuniverse/flake.nix";
@@ -45,8 +45,8 @@
       "https://cache.nixos.org"
       "https://install.determinate.systems"
       #"https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
-      "https://mirrors.ustc.edu.cn/nix-channels/store"
-      "https://mirror.sjtu.edu.cn/nix-channels/store"
+      #"https://mirrors.ustc.edu.cn/nix-channels/store"
+      #"https://mirror.sjtu.edu.cn/nix-channels/store"
       "https://nix-community.cachix.org"
     ];
     trusted-public-keys = [

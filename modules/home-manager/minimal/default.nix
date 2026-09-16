@@ -15,6 +15,7 @@
     dig # DNS lookup
     fd
     ripgrep
+    herdr
   ];
 
   home.username = username;
