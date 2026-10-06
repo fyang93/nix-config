@@ -11,6 +11,9 @@
   ];
 
   home.packages = with pkgs; [
+    # wayland
+    wl-clipboard
+
     # browser
     firefox
     google-chrome
@@ -26,6 +29,7 @@
     wemeet
     feishu
     (callPackage ./lark.nix { })
+    remmina
 
     # cloud storage
     # onedrivegui

@@ -7,6 +7,11 @@
     ./ssh.nix
   ];
 
+  environment.etc.certfile = {
+    source = "/etc/ssl/certs/ca-bundle.crt";
+    target = "ssl/cert.pem";
+  };
+
   environment.systemPackages = with pkgs; [
     home-manager
     wget

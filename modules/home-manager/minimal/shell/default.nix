@@ -62,8 +62,5 @@
 
     # a cat(1) clone with syntax highlighting and Git integration.
     bat.enable = true;
-
-    # A modern replacement for screen/tmux
-    zellij.enable = true;
   };
 }

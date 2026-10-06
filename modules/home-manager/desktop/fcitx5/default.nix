@@ -17,6 +17,9 @@
     XMODIFIERS = "@im=fcitx";
   };
 
+  # XWayland apps (e.g. WeChat and Feishu) need the display scale for Fcitx.
+  xresources.properties."Xft.dpi" = 192;
+
   home.file.".config/fcitx5/profile" = {
     source = ./profile;
     force = true;

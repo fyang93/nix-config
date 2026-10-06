@@ -85,8 +85,8 @@
   # services.openssh.enable = true;
 
   # Open ports in the firewall.
-  # 8189/8889 for live camera
-  networking.firewall.allowedTCPPorts = [ 8889 ];
+  # 8080/8189 for live-camera
+  networking.firewall.allowedTCPPorts = [ 8080 8189 ];
   networking.firewall.allowedUDPPorts = [ 8189 ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;

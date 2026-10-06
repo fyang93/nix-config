@@ -1,11 +1,9 @@
-{ pkgs, username, ... }:
+{ pkgs, inputs, username, ... }:
 {
   imports = [
     ./shell
-    ./zellij
     ./git.nix
     ./archive.nix
-    ./dev.nix
   ];
 
   nixpkgs.config.allowUnfree = true;
@@ -13,9 +11,23 @@
   home.packages = with pkgs; [
     fastfetch
     dig # DNS lookup
-    fd
     ripgrep
-    herdr
+    fd
+    jq
+
+    just
+    uv
+    bun
+    nodejs_22
+    gnumake
+    gcc
+
+    inputs.nixpkgs-herdr.legacyPackages.${pkgs.stdenv.hostPlatform.system}.herdr
+
+    # LSP: https://opencode.ai/docs/lsp/
+    pyright
+    deno
+    nixd
   ];
 
   home.username = username;

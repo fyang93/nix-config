@@ -2,7 +2,6 @@
   description = "NixOS Flake (Migrated to flake-parts)";
 
   inputs = {
-    determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/*";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     flake-parts.url = "github:hercules-ci/flake-parts";
     nixos-wsl = {
@@ -14,6 +13,9 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    # herdr 0.9.1 fails to link on current nixos-unstable; pin a rev that Hydra built and cached.
+    # Remove once nixpkgs.herdr is cached again.
+    nixpkgs-herdr.url = "github:nixos/nixpkgs/daf5b068c29a2fa26008f3c7cf2200d558acfe71";
     # daeuniverse.url = "github:daeuniverse/flake.nix";
   };
 
@@ -43,7 +45,6 @@
     ];
     substituters = [
       "https://cache.nixos.org"
-      "https://install.determinate.systems"
       #"https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
       #"https://mirrors.ustc.edu.cn/nix-channels/store"
       #"https://mirror.sjtu.edu.cn/nix-channels/store"
@@ -51,7 +52,6 @@
     ];
     trusted-public-keys = [
       "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
-      "cache.flakehub.com-3:hJuILl5sVK4iKm86JzgdXW12Y2Hwd5G07qKtHTOcDCM="
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
     ];
   };

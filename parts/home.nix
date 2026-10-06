@@ -6,7 +6,7 @@
       extraSpecialArgs = {
         username = "yang";
         useremail = "norepfy@gmail.com";
-        inherit secrets;
+        inherit secrets inputs;
       };
       modules = [
         ../modules/home-manager/minimal
@@ -29,7 +29,7 @@
       extraSpecialArgs = {
         username = "yang";
         useremail = "norepfy@gmail.com";
-        inherit secrets;
+        inherit secrets inputs;
       };
       modules = [
         ../modules/home-manager/minimal
@@ -41,7 +41,7 @@
       extraSpecialArgs = {
         username = "guest";
         useremail = "guest@mail.com";
-        inherit secrets;
+        inherit secrets inputs;
       };
       modules = [
         ../modules/home-manager/minimal
