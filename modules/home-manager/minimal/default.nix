@@ -19,8 +19,6 @@
     uv
     bun
     nodejs_22
-    gnumake
-    gcc
 
     inputs.nixpkgs-herdr.legacyPackages.${pkgs.stdenv.hostPlatform.system}.herdr
 
