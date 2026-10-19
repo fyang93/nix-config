@@ -23,6 +23,8 @@
     "$HOME/.local/bin"
     "$NPM_CONFIG_PREFIX/bin"
     "$BUN_INSTALL/bin"
+    # fnm default node, for non-interactive shells
+    "$HOME/.local/share/fnm/aliases/default/bin"
   ];
 
   programs = {

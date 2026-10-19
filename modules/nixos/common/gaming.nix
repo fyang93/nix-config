@@ -13,7 +13,10 @@
         unset TZ
         export GDK_SCALE=1
         export GDK_DPI_SCALE=1.2
-        export XCURSOR_SIZE=36
+        # Let the desktop supply the cursor size, including Xwayland scaling.
+        # Expose the cursor theme inside Steam's container.
+        export XCURSOR_THEME=breeze_cursors
+        export XCURSOR_PATH="${pkgs.kdePackages.breeze}/share/icons''${XCURSOR_PATH:+:$XCURSOR_PATH}"
       '';
     };
   };

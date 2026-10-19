@@ -17,6 +17,7 @@
     interactiveShellInit = ''
       set -gx LANGUAGE en
       zoxide init fish | source
+      fnm env --use-on-cd --version-file-strategy=recursive --shell fish | source
       set -g fish_features no-expand-full qmark-noglob stderr-nocaret
       fish_config theme choose "catppuccin-mocha"
       tinty init

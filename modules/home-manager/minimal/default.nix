@@ -18,7 +18,7 @@
     just
     uv
     bun
-    nodejs_22
+    fnm # Node.js version manager (official nodejs.org builds)
 
     inputs.nixpkgs-herdr.legacyPackages.${pkgs.stdenv.hostPlatform.system}.herdr
 

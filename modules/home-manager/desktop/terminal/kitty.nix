@@ -2,6 +2,7 @@
 {
   programs.kitty = {
     enable = true;
+    #themeFile = "Catppuccin-Mocha";
     enableGitIntegration = true;
     shellIntegration.enableBashIntegration = true;
     settings = {

@@ -19,6 +19,8 @@
 
       # extra
       noto-fonts
+      # Steam's X11 updater uses core bitmap fonts rather than fontconfig.
+      font-misc-misc
 
       # custom fonts
       (stdenvNoCC.mkDerivation {
@@ -33,6 +35,9 @@
     ];
 
     fontconfig = {
+      # Keep X11 core bitmap fonts for Steam out of application font fallback.
+      allowBitmaps = false;
+
       # User defined default fonts
       # https://catcat.cc/post/2021-03-07/
       defaultFonts = {
