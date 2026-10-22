@@ -12,7 +12,6 @@
       l = "eza -lah";
       lt = "eza --tree --level=2";
       cat = "bat --style=plain --paging=never";
-      opencode = "bunx opencode";
     };
     interactiveShellInit = ''
       set -gx LANGUAGE en

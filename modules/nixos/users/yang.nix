@@ -22,6 +22,7 @@ in
     openssh.authorizedKeys.keys = [
       "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCkjhbJRkAagX4N/lMyL/sRvg2qzZHntu4ZHXO+NCI1BetA1kykVSjA0MS5E0jJ5+ACihCeqmivzNiOFoZvQ1quBNKU4XF3b7MnkfW93qH1ET30klzO7kV6+5ycH/hLHENsZB4YEghSUrictxkDADlvlhKORFFoLK/aUVwfHgONaRius9beKevsDmrlnIVBUiuaj//WbyHVWBeJBdRVFaLChvD8qq/bjVEij5vE41u9lZhz1MU2IHEHSp60kXLUILwlR0rr+F+1OXtF9oqOwzNdBs181oJal9fA/G11CPbnCeqjq7I+shA03XAooXuTm9Ni0CPb+FZSzcUeDzTrjGoj yang@NII"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMggbqyvwD9XXdwm/O9/aW8wx4k58hqM/08/gjnChS1b yang"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFLLNrySEYj+mMfCztM2RdD0J58P3EYO3m+GDWZmARYK amy"
     ];
   };
 }

@@ -2,7 +2,6 @@
 {
   imports = [
     ./fish.nix
-    ./btop.nix
   ];
 
   home.packages = with pkgs; [
@@ -31,8 +30,6 @@
     # A cross-shell prompt
     starship = {
       enable = true;
-      enableBashIntegration = true;
-      enableZshIntegration = true;
       enableFishIntegration = true;
     };
 
@@ -41,24 +38,18 @@
       enable = true;
       fileWidget.command = "fd --type f";
       changeDirWidget.command = "fd --type d";
-      enableBashIntegration = false; # managed by ble.sh
-      enableZshIntegration = true;
       enableFishIntegration = true;
     };
 
     # A smarter cd command
     zoxide = {
       enable = true;
-      enableBashIntegration = true;
-      enableZshIntegration = true;
       enableFishIntegration = true;
     };
 
     # A modern replacement for ls
     eza = {
       enable = true;
-      enableBashIntegration = true;
-      enableZshIntegration = true;
       enableFishIntegration = true;
     };
 

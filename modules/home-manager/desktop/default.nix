@@ -16,7 +16,6 @@
 
     # browser
     firefox
-    google-chrome
 
     # im
     telegram-desktop
