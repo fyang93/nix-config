@@ -4,17 +4,19 @@
     enable = true;
     type = "fcitx5";
     fcitx5.addons = with pkgs; [
-      fcitx5-gtk # alternatively, kdePackages.fcitx5-qt
+      fcitx5-gtk
+      kdePackages.fcitx5-qt
       fcitx5-rime
       fcitx5-mozc
     ];
     fcitx5.waylandFrontend = true;
   };
 
+  # Qt apps running through XWayland (e.g. WeChat) need the Qt Fcitx frontend.
   home.sessionVariables = {
+    XMODIFIERS = "@im=fcitx";
     GTK_IM_MODULE = "fcitx";
     QT_IM_MODULE = "fcitx";
-    XMODIFIERS = "@im=fcitx";
   };
 
   # XWayland apps (e.g. WeChat and Feishu) need the display scale for Fcitx.

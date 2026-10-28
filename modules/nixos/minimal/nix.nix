@@ -17,6 +17,10 @@
       "nix-command"
       "flakes"
     ];
+    extra-substituters = [ "https://noctalia.cachix.org" ];
+    extra-trusted-public-keys = [
+      "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
+    ];
   };
 
   nix.channel.enable = false; # remove nix-channel related tools & configs, we use flakes instead.

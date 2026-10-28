@@ -22,6 +22,7 @@
       modules = [
         ../modules/home-manager/minimal
         ../modules/home-manager/desktop
+        inputs.noctalia.homeModules.default
       ];
     };
     "yang@nas" = inputs.home-manager.lib.homeManagerConfiguration {
@@ -34,6 +35,7 @@
       modules = [
         ../modules/home-manager/minimal
         ../modules/home-manager/desktop
+        inputs.noctalia.homeModules.default
       ];
     };
     "guest@nas" = inputs.home-manager.lib.homeManagerConfiguration {

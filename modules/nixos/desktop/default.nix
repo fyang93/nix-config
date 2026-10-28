@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   imports = [
-    ./kde.nix
+    ./niri.nix
     ./audio.nix
     ./font.nix
   ];
