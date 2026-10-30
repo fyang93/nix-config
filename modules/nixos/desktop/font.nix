@@ -19,6 +19,7 @@
 
       # extra
       noto-fonts
+      noto-fonts-cjk-sans
       # Steam's X11 updater uses core bitmap fonts rather than fontconfig.
       font-misc-misc
 
@@ -46,6 +47,7 @@
         ];
         sansSerif = [
           "HarmonyOS Sans"
+          "Noto Sans CJK SC"
           #"LXGW Neo XiHei"
         ];
         monospace = [

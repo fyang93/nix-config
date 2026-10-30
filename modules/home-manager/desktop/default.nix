@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   home.pointerCursor = {
     enable = true;
@@ -10,6 +10,11 @@
   };
 
   xdg.configFile."niri/config.kdl".source = ../niri/config.kdl;
+  # config.kdl includes monitor.kdl, which nwg-displays owns; make sure it exists.
+  home.activation.niriMonitorKdl = lib.hm.dag.entryBefore [ "writeBoundary" ] ''
+    run mkdir -p "$HOME/.config/niri"
+    [ -e "$HOME/.config/niri/monitor.kdl" ] || run touch "$HOME/.config/niri/monitor.kdl"
+  '';
 
   programs.noctalia = {
     enable = true;
@@ -29,21 +34,14 @@
   home.packages = with pkgs; [
     # wayland
     wl-clipboard
+    nwg-displays
 
     # browser
     firefox
-
-    # im
-    telegram-desktop
-    discord
-    slack
-    wechat
+    nautilus
 
     # work
-    wpsoffice-cn
-    wemeet
-    feishu
-    (callPackage ./lark.nix { })
+    #(callPackage ./lark.nix { })
     remmina
 
     # cloud storage
