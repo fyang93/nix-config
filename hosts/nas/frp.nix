@@ -7,7 +7,7 @@
       serverAddr = "${secrets.frp.server}";
       serverPort = secrets.frp.port;
       auth.method = "token";
-      auth.token = "${secrets.frp.token}"; 
+      auth.token = "${secrets.frp.token}";
       proxies = [
         {
           name = "ssh";

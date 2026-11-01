@@ -65,10 +65,7 @@
   ###################################################################################
   #
   #  Copy from https://github.com/NixOS/nixpkgs/issues/119433#issuecomment-1326957279
-  #  Mainly for flatpak
-  #    1. bindfs resolves all symlink,
-  #    2. allowing all fonts to be accessed at `/usr/share/fonts`
-  #    3. without letting /nix into the sandbox.
+  #  Make fonts available under `/usr/share/fonts` for FHS applications.
   #
   ###################################################################################
 
@@ -91,7 +88,7 @@
       };
     in
     {
-      # Create an FHS mount to support flatpak host icons/fonts
+      # Expose host icons and fonts to FHS applications.
       "/usr/share/icons" = mkRoSymBind (config.system.path + "/share/icons");
       "/usr/share/fonts" = mkRoSymBind (aggregatedFonts + "/share/fonts");
     };

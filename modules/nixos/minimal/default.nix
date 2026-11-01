@@ -21,7 +21,7 @@
     usbutils # lsusb, etc.
   ];
 
-  programs.vim = {
+  programs.neovim = {
     enable = true;
     defaultEditor = lib.mkDefault true;
   };

@@ -9,7 +9,6 @@
   ];
 
   home.sessionVariables = {
-    EDITOR = "vim";
     UV_CACHE_DIR = "$HOME/.cache/uv";
     NPM_CONFIG_PREFIX = "$HOME/.npm";
     NPM_CONFIG_CACHE = "$HOME/.cache/npm";
@@ -26,6 +25,12 @@
   ];
 
   programs = {
+    neovim = {
+      enable = true;
+      vimAlias = true;
+      waylandSupport = true;
+    };
+
     # A cross-shell prompt
     starship = {
       enable = true;

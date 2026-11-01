@@ -1,4 +1,4 @@
-{ pkgs, inputs, username, ... }:
+{ pkgs, username, ... }:
 {
   imports = [
     ./shell
@@ -20,7 +20,7 @@
     bun
     fnm # Node.js version manager (official nodejs.org builds)
 
-    inputs.nixpkgs-herdr.legacyPackages.${pkgs.stdenv.hostPlatform.system}.herdr
+    (pkgs.callPackage ./herdr.nix { })
 
     # LSP: https://opencode.ai/docs/lsp/
     pyright

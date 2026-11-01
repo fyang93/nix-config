@@ -41,7 +41,6 @@
         ../modules/nixos/common/nvidia.nix
         ../modules/nixos/common/bluetooth.nix
         ../modules/nixos/common/gaming.nix
-        ../modules/nixos/common/flatpak.nix
         ../modules/nixos/common/networkmanager
         ../modules/nixos/common/virtualisation
         ../modules/nixos/minimal
