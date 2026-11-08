@@ -19,7 +19,11 @@ switch homeconf=HOMECONF:
     #!/usr/bin/env bash
     set -euo pipefail
     [[ -d .git ]] && git add .
-    home-manager switch --flake ".#{{homeconf}}" -L
+    if command -v home-manager >/dev/null 2>&1; then
+        home-manager switch --flake ".#{{homeconf}}" -L
+    else
+        nix run nixpkgs#home-manager -- switch --flake ".#{{homeconf}}" -L
+    fi
 
 clean:
     #!/usr/bin/env bash

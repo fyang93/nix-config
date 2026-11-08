@@ -1,6 +1,30 @@
 { inputs, secrets, ... }:
 {
   flake.homeConfigurations = {
+    "deck@steamdeck" = inputs.home-manager.lib.homeManagerConfiguration {
+      pkgs = inputs.nixpkgs.legacyPackages."x86_64-linux";
+      extraSpecialArgs = {
+        username = "deck";
+        useremail = "deck@steamdeck";
+        inherit secrets inputs;
+      };
+      modules = [
+        ../modules/home-manager/minimal
+        ../modules/home-manager/minimal/shell/bash-fish.nix
+      ];
+    };
+    "yang" = inputs.home-manager.lib.homeManagerConfiguration {
+      pkgs = inputs.nixpkgs.legacyPackages."x86_64-linux";
+      extraSpecialArgs = {
+        username = "yang";
+        useremail = "norepfy@gmail.com";
+        inherit secrets inputs;
+      };
+      modules = [
+        ../modules/home-manager/minimal
+        ../modules/home-manager/minimal/shell/bash-fish.nix
+      ];
+    };
     "yang@wsl" = inputs.home-manager.lib.homeManagerConfiguration {
       pkgs = inputs.nixpkgs.legacyPackages."x86_64-linux";
       extraSpecialArgs = {
