@@ -12,11 +12,12 @@
     fcitx5.waylandFrontend = true;
   };
 
-  home.sessionVariables = {
-    XMODIFIERS = "@im=fcitx";
-    GTK_IM_MODULE = "fcitx";
-    QT_IM_MODULE = "fcitx";
-  };
+  # Wayland 下由 NixOS 的 waylandFrontend 处理输入法环境，避免全局强制 Qt/GTK 输入法模块干扰 Plasma 锁屏。
+  # home.sessionVariables = {
+  #   XMODIFIERS = "@im=fcitx";
+  #   GTK_IM_MODULE = "fcitx";
+  #   QT_IM_MODULE = "fcitx";
+  # };
 
   home.file.".config/fcitx5/profile" = {
     source = ./profile;

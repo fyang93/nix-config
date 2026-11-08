@@ -29,6 +29,9 @@
       enable = true;
       vimAlias = true;
       waylandSupport = true;
+      extraConfig = ''
+        set clipboard+=unnamedplus
+      '';
     };
 
     # A cross-shell prompt

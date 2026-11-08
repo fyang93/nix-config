@@ -2,6 +2,7 @@
 {
   home.file.".bashrc".force = true;
   home.file.".profile".force = true;
+  home.file.".bash_profile".force = true;
 
   programs.bash = {
     enable = true;

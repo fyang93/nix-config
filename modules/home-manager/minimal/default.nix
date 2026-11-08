@@ -10,7 +10,6 @@
 
   home.packages = with pkgs; [
     fastfetch
-    dig # DNS lookup
     ripgrep
     fd
     jq
@@ -21,11 +20,6 @@
     fnm # Node.js version manager (official nodejs.org builds)
 
     (pkgs.callPackage ./herdr.nix { })
-
-    # LSP: https://opencode.ai/docs/lsp/
-    pyright
-    deno
-    nixd
   ];
 
   home.username = username;
