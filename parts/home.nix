@@ -11,7 +11,7 @@
       modules = [
         ../modules/home-manager/minimal
         ../modules/home-manager/minimal/shell/bash-fish.nix
-        ../modules/home-manager/desktop/fcitx5
+        # ../modules/home-manager/desktop/fcitx5
       ];
     };
     "yang" = inputs.home-manager.lib.homeManagerConfiguration {
