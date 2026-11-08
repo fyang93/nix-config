@@ -22,6 +22,13 @@
       modules = [
         ../modules/home-manager/minimal
         ../modules/home-manager/desktop
+        ({ pkgs, ... }: {
+          home.packages = with pkgs; [
+            wemeet
+            feishu
+            (callPackage ../modules/home-manager/desktop/lark.nix { })
+          ];
+        })
       ];
     };
     "yang@nas" = inputs.home-manager.lib.homeManagerConfiguration {

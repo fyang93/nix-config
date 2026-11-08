@@ -14,16 +14,13 @@
     wl-clipboard
 
     # browser
-    firefox
-    nautilus
+    google-chrome
 
     # work
     wechat
     feishu
     #(callPackage ./lark.nix { })
+    #wpsoffice-cn
     remmina
-
-    # cloud storage
-    # onedrivegui
   ];
 }

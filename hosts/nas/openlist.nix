@@ -26,6 +26,15 @@
       WorkingDirectory = "/var/lib/openlist";
 
       ExecStart = "${pkgs.openlist}/bin/OpenList server";
+      Environment = [
+        "OPENLIST_TASKS_DOWNLOAD_MAX_RETRY=99"
+        "OPENLIST_TASKS_TRANSFER_MAX_RETRY=99"
+        "OPENLIST_TASKS_UPLOAD_MAX_RETRY=99"
+        "OPENLIST_TASKS_COPY_MAX_RETRY=99"
+        "OPENLIST_TASKS_MOVE_MAX_RETRY=99"
+        "OPENLIST_TASKS_DECOMPRESS_MAX_RETRY=99"
+        "OPENLIST_TASKS_DECOMPRESS_UPLOAD_MAX_RETRY=99"
+      ];
       Restart = "on-failure";
       RestartSec = 5;
     };
