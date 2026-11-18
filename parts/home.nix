@@ -50,7 +50,6 @@
           home.packages = with pkgs; [
             wemeet
             feishu
-            (callPackage ../modules/home-manager/desktop/lark.nix { })
           ];
         })
       ];

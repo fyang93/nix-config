@@ -19,7 +19,8 @@
     bun
     fnm # Node.js version manager (official nodejs.org builds)
 
-    (pkgs.callPackage ./herdr.nix { })
+    herdr
+    #(pkgs.callPackage ./herdr.nix { })
   ];
 
   home.username = username;

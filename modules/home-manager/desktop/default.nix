@@ -17,10 +17,8 @@
     google-chrome
 
     # work
+    herdr-desktop
     wechat
-    feishu
-    #(callPackage ./lark.nix { })
-    #wpsoffice-cn
     remmina
   ];
 }
