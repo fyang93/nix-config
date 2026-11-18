@@ -1,5 +1,5 @@
 HOSTNAME := env('HOSTNAME', `echo $HOSTNAME`)
-HOMECONF := env('HOMECONF', `echo $USER@$HOSTNAME`)
+HOMECONF := env('HOMECONF', `if [ "$(uname)" = Darwin ]; then echo "$USER"; else echo "$USER@$HOSTNAME"; fi`)
 
 default:
     @just --list
