@@ -28,7 +28,7 @@
     neovim = {
       enable = true;
       vimAlias = true;
-      waylandSupport = true;
+      waylandSupport = pkgs.stdenv.isLinux;
       extraConfig = ''
         set clipboard+=unnamedplus
       '';
