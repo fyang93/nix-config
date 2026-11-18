@@ -1,4 +1,4 @@
-{ pkgs, username, ... }:
+{ pkgs, username, homeDirectory ? "/home/${username}", ... }:
 {
   imports = [
     ./shell
@@ -19,12 +19,13 @@
     bun
     fnm # Node.js version manager (official nodejs.org builds)
 
-    herdr
+    herdr # Herdr TUI
+    herdr-core # hc CLI / core service
     #(pkgs.callPackage ./herdr.nix { })
   ];
 
   home.username = username;
-  home.homeDirectory = "/home/${username}";
+  home.homeDirectory = homeDirectory;
 
   home.stateVersion = "26.05";
 }

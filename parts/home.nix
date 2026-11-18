@@ -1,6 +1,20 @@
 { inputs, secrets, ... }:
 {
   flake.homeConfigurations = {
+    "bytedance" = inputs.home-manager.lib.homeManagerConfiguration {
+      pkgs = inputs.nixpkgs.legacyPackages."aarch64-darwin";
+      extraSpecialArgs = {
+        username = "bytedance";
+        homeDirectory = "/Users/bytedance";
+        gitUsername = "amy";
+        useremail = "shixiaoyuamy@gmail.com";
+        inherit secrets inputs;
+      };
+      modules = [
+        ../modules/home-manager/minimal
+        ../modules/home-manager/minimal/shell/zsh-fish.nix
+      ];
+    };
     "deck@steamdeck" = inputs.home-manager.lib.homeManagerConfiguration {
       pkgs = inputs.nixpkgs.legacyPackages."x86_64-linux";
       extraSpecialArgs = {

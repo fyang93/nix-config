@@ -1,10 +1,10 @@
-{ username, useremail, ... }:
+{ username, useremail, gitUsername ? username, ... }:
 {
   programs = {
     git = {
       enable = true;
       settings.user = {
-        name = "${username}";
+        name = gitUsername;
         email = "${useremail}";
       };
     };
