@@ -48,6 +48,12 @@
       enableFishIntegration = true;
     };
 
+    # Terminal file manager
+    yazi = {
+      enable = true;
+      enableFishIntegration = true;
+    };
+
     # A smarter cd command
     zoxide = {
       enable = true;

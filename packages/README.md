@@ -60,3 +60,13 @@ packages/
 ```
 
 Nix 会自动读取目录中的 `default.nix`。引用包时应确认目标系统与包兼容；例如只支持 Linux x86_64 的软件，不要添加到不兼容的 Darwin 或 ARM 配置中。
+
+### Tern
+
+Tern 的安装包需要从 Stencil 登录下载，压缩包保存在 `packages/tern/`，不提交到 Git。首次安装或清理 Nix store 后缺少安装包时，在仓库根目录运行：
+
+```bash
+nix-store --add-fixed sha256 packages/tern/Tern-0.9.36-linux-x86_64.tar.gz
+```
+
+`packages/tern/default.nix` 通过 `requireFile` 按文件名和 SHA-256 使用这份安装包。目前只在 `parts/home.nix` 的 `yang@home` 中启用。

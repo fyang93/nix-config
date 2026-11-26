@@ -1,4 +1,4 @@
-{ pkgs, username, homeDirectory ? "/home/${username}", ... }:
+{ pkgs, username, lib, ... }:
 {
   imports = [
     ./shell
@@ -25,7 +25,7 @@
   ];
 
   home.username = username;
-  home.homeDirectory = homeDirectory;
+  home.homeDirectory = lib.mkDefault "/home/${username}";
 
   home.stateVersion = "26.05";
 }

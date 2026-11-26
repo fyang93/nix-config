@@ -5,14 +5,16 @@
       pkgs = inputs.nixpkgs.legacyPackages."aarch64-darwin";
       extraSpecialArgs = {
         username = "bytedance";
-        homeDirectory = "/Users/bytedance";
-        gitUsername = "amy";
         useremail = "shixiaoyuamy@gmail.com";
         inherit secrets inputs;
       };
       modules = [
         ../modules/home-manager/minimal
         ../modules/home-manager/minimal/shell/zsh-fish.nix
+        {
+          home.homeDirectory = "/Users/bytedance";
+          programs.git.settings.user.name = "amy";
+        }
       ];
     };
     "deck@steamdeck" = inputs.home-manager.lib.homeManagerConfiguration {
@@ -65,6 +67,7 @@
             wemeet
             feishu
             whatsapp-electron
+            (callPackage ../packages/tern { })
           ];
         })
       ];
