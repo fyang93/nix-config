@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ pkgs, lib }:
 
 let
   # 直接沿用原版 feishu 的依赖定义列表

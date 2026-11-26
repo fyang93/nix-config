@@ -64,6 +64,7 @@
           home.packages = with pkgs; [
             wemeet
             feishu
+            whatsapp-electron
           ];
         })
       ];
