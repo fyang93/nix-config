@@ -7,6 +7,7 @@
       g = "git";
       j = "just";
       h = "herdr";
+      y = "yazi";
     };
     shellAliases = {
       l = "eza -lah";
