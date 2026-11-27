@@ -11,7 +11,7 @@
     wants = [ "network-online.target" ];
 
     serviceConfig = {
-      ExecStart = "${pkgs.easytier}/bin/easytier-core -i 10.10.10.10 --network-name ${secrets.easytier.network-name} --network-secret ${secrets.easytier.network-secret} --latency-first true -p ${secrets.easytier.server}";
+      ExecStart = "${pkgs.easytier}/bin/easytier-core -i 10.10.10.10 --network-name ${secrets.easytier.network-name} --network-secret ${secrets.easytier.network-secret} --latency-first true -p ${builtins.concatStringsSep "," secrets.easytier.servers}";
       Restart = "always";
       RestartSec = 5;
     };
