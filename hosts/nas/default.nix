@@ -83,6 +83,7 @@
   # Open ports in the firewall.
   networking.firewall.allowedTCPPorts = [ 8787 ];
   networking.firewall.allowedUDPPorts = [ 8787 ];
+  networking.firewall.interfaces.tun0.allowedTCPPorts = [ 3389 ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
